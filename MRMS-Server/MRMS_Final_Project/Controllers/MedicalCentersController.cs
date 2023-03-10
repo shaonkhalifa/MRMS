@@ -12,7 +12,7 @@ public class MedicalCentersController : ControllerBase
     public MedicalCentersController(IGlobalRepository globalRepository)
     {
         this._globalRepo = globalRepository;
-        this._medicalRepo = _globalRepo.MedicalCenterRepository;
+        this._medicalRepo = _globalRepo.GetRepository<MedicalCenter>();
     }
 
     // GET: api/MedicalCenters

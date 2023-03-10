@@ -52,9 +52,8 @@ builder.Services.AddDbContext<MRMSDBContext>(options =>
     options.UseSqlServer(connectionString));
 
 
-builder.Services.AddScoped<IGlobalRepository, GlobalRepository>();
-
-
+//builder.Services.AddScoped<IGlobalRepository, GlobalRepository>();
+builder.Services.AddScoped(typeof(IGlobalRepository), typeof(GlobalRepository));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

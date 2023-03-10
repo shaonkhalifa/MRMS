@@ -15,7 +15,7 @@ namespace MRMS_Final_Project.Controllers
         public AgentsController(IGlobalRepository globalRepository)
         {
             this._globalRepo = globalRepository;
-            this._agentRepo = _globalRepo.AgentRepository;
+            this._agentRepo = _globalRepo.GetRepository<Agent>();
         }
 
         //Get Agents

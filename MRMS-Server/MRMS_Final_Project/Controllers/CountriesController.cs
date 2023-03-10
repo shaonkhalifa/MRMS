@@ -16,7 +16,7 @@ namespace MRMS_Final_Project.Controllers
         public CountriesController(IGlobalRepository globalRepo)
         {
             this._globalRepo = globalRepo;
-            this._countryRepo = _globalRepo.CountryRepository;
+            this._countryRepo = _globalRepo.GetRepository<Country>();
         }
         // Get Country
         [HttpGet]

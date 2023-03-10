@@ -18,7 +18,7 @@ namespace MRMS_Final_Project.Controllers
         public ApplicantIssuesController(IGlobalRepository globalRepository)
         {
             this._globalRepository = globalRepository;
-            this._applicantIssueRepository = _globalRepository.ApplicantIssueRepository;
+            this._applicantIssueRepository = _globalRepository.GetRepository<ApplicantIssue>();
         }
 
         // GET:

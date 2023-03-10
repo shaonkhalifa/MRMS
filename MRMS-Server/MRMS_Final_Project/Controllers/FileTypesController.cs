@@ -15,7 +15,7 @@ namespace MRMS_Final_Project.Controllers
         public FileTypesController(IGlobalRepository globalRepository)
         {
             this._globalRepository = globalRepository;
-            this._fileRepository = _globalRepository.FileTypeRepository;
+            this._fileRepository = _globalRepository.GetRepository<FileType>();
         }
 
 

@@ -17,7 +17,7 @@ namespace MRMS_Final_Project.Controllers
         public DemandsController(IGlobalRepository globalRepo)
         {
             this._globalRepo= globalRepo;
-            this._demandRepo = _globalRepo.DemandRepository;
+            this._demandRepo = _globalRepo.GetRepository<Demand>();
         }
 
         //Get Data

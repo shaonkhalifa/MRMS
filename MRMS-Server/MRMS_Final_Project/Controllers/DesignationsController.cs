@@ -19,7 +19,7 @@ namespace MRMS_Final_Project.Controllers
         public DesignationsController(IGlobalRepository globalRepository)
         {
             this._globalRepository = globalRepository;
-            this._designationRepository = _globalRepository.DesignationRepository;
+            this._designationRepository = _globalRepository.GetRepository<Designation>();
         }
 
 

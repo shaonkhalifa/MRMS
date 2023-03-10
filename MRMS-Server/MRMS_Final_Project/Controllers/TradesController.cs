@@ -15,7 +15,7 @@ namespace MRMS_Final_Project.Controllers
         public TradesController(IGlobalRepository globalRepo)
         {
             this._globalRepo = globalRepo;           
-            this._tradeRepo = _globalRepo.TradeRepository;
+            this._tradeRepo = _globalRepo.GetRepository<Trade>();
            
 
         }

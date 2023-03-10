@@ -15,7 +15,7 @@ namespace MRMS_Final_Project.Controllers
         public DemadFilesController(IGlobalRepository globalRepo)
         {
             this._globalRepo = globalRepo;
-            this._demandFileRepo = _globalRepo.DemandFileRepository;
+            this._demandFileRepo = _globalRepo.GetRepository<DemandFile>();
         }
 
         //Get DemandFiles

@@ -15,7 +15,7 @@ namespace MRMS_Final_Project.Controllers
         public CompaniesController(IGlobalRepository globalRepo)
         {
             this._globalRepo = globalRepo;
-            this._comparyRepo = _globalRepo.CompanyRepository;
+            this._comparyRepo = _globalRepo.GetRepository<Company>();
         }
         // Get Company
         [HttpGet]

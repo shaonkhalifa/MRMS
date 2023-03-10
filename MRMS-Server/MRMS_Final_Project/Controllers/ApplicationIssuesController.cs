@@ -13,7 +13,7 @@ namespace MRMS_Final_Project.Controllers
         public ApplicationIssuesController(IGlobalRepository _globalRepo)
         {
             this._globalRepo = _globalRepo;
-            this._applicationIssueRepo = _globalRepo.ApplicationIssueRepository;
+            this._applicationIssueRepo = _globalRepo.GetRepository<ApplicationIssue>();
         }
 
         //Get Data

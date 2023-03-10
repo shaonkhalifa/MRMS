@@ -18,7 +18,7 @@ namespace MRMS_Final_Project.Controllers
         public ApplicantFilesController(IGlobalRepository globalRepository)
         {
             this._globalRepository = globalRepository;
-            this._applicantFileRepository = _globalRepository.ApplicantFileRepository;
+            this._applicantFileRepository = _globalRepository.GetRepository<ApplicantFile>();
         }
 
 

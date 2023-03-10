@@ -17,7 +17,7 @@ namespace MRMS_Final_Project.Controllers
         public EmployeeFilesController(IGlobalRepository globalRepository)
         {
             this._globalRepository = globalRepository;
-            this._employyeefileRepository = _globalRepository.EmployeeFileRepository;
+            this._employyeefileRepository = _globalRepository.GetRepository<EmployeeFile>();
         }
 
 

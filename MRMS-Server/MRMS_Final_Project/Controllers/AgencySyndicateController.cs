@@ -15,7 +15,7 @@ namespace MRMS_Final_Project.Controllers
         public AgencySyndicateController(IGlobalRepository globalRepository)
         {
             this._globalRepository = globalRepository;
-            this._agencySyndicateRepository = _globalRepository.AgencySyndicateRepository;
+            this._agencySyndicateRepository = _globalRepository.GetRepository<AgencySyndicate>();
         }
 
         //Get Syndicate Agency List

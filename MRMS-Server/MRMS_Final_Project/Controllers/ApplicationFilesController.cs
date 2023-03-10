@@ -13,7 +13,7 @@ namespace MRMS_Final_Project.Controllers
         public ApplicationFilesController(IGlobalRepository _globalRepo)
         {
             this._globalRepo = _globalRepo;
-            this._applicationFileRepo = _globalRepo.ApplicationFileRepository;
+            this._applicationFileRepo = _globalRepo.GetRepository<ApplicationFile>();
         }
 
         //Get Data

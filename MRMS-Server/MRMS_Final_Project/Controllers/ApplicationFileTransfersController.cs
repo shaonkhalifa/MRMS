@@ -14,7 +14,7 @@ namespace MRMS_Final_Project.Controllers
         public ApplicationFileTransfersController(IGlobalRepository _globalRepo)
         {
             this._globalRepo = _globalRepo;
-            this._applicationFileTransferRepo = _globalRepo.ApplicationFileTransferRepository;
+            this._applicationFileTransferRepo = _globalRepo.GetRepository<ApplicationFileTransfer>();
         }
 
         //Get Data

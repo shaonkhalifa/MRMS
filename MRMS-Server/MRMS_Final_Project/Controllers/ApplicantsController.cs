@@ -19,7 +19,7 @@ namespace MRMS_Final_Project.Controllers
         public ApplicantsController(IGlobalRepository globalRepository, IWebHostEnvironment env)
         {
             this._globalRepository = globalRepository;
-            this._applicantRepository = _globalRepository.ApplicantRepository;
+            this._applicantRepository = _globalRepository.GetRepository<Applicant>();
             _env = env;
         }
 

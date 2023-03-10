@@ -18,7 +18,7 @@ namespace MRMS_Final_Project.Controllers
         public EmployeesController(IGlobalRepository globalRepository, IWebHostEnvironment env)
         {
             this._globalRepository = globalRepository;
-            this._employeeRepository = _globalRepository.EmployeeRepository;
+            this._employeeRepository = _globalRepository.GetRepository<Employee>();
             _env = env;
         }
 

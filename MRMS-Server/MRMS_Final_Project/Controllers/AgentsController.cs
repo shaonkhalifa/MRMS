@@ -25,13 +25,26 @@ namespace MRMS_Final_Project.Controllers
             return _agentRepo.GetAll();
         }
 
+        //Get Agent by agentId
+        [HttpGet("{AgentId}")]
+        public ActionResult<Agent> GetAgentByAgentId(int agentId)
+        {
+            var agent = _agentRepo.Get(agentId);
+
+            if (agent is not null)
+            {
+                return agent;
+            }
+            return NotFound();
+        }
+
         //Post Agent
         [HttpPost]
-        public IActionResult Agentpost(Agent agent)
+        public IActionResult AddAgent(Agent agent)
         {
             _agentRepo.Insert(agent);
             _globalRepo.Save();
-            return Ok(agent);
+            return CreatedAtAction(nameof(GetAgentByAgentId), new { agentId = agent.AgentId }, agent);
         }
 
         //Update Agent

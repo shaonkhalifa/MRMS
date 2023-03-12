@@ -7,6 +7,7 @@ import { TradeCreateComponent } from './component/demandSection/trade-create/tra
 import { TradeEditComponent } from './component/demandSection/trade-edit/trade-edit.component';
 import { TradeViewComponent } from './component/demandSection/trade-view/trade-view.component';
 import { HomeComponent } from './component/home/home.component';
+import { MedicalViewComponent } from './component/MedicalSection/medical-view/medical-view.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'trade', component: TradeViewComponent },
   { path: 'trade-create', component: TradeCreateComponent },
   { path: 'trade-edit/:id', component: TradeEditComponent },
+  { path: 'medical-view', component: MedicalViewComponent },
+  {path:'medicalCenter',component:MedicalViewComponent}
 ];
 
 @NgModule({

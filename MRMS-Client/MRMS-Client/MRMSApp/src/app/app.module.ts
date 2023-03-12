@@ -22,6 +22,22 @@ import { MatModule } from './module/shared/mat/mat.module';
 import { ConfirmDialogComponent } from './component/shared/confirm-dialog/confirm-dialog.component';
 import { HomeComponent } from './component/home/home.component';
 import { AuthInterceptor } from './Shared/authconfig.interceptor';
+import { MedicalIssuesCreateComponent } from './component/MedicalSection/MedicalIssues/medical-issues-create/medical-issues-create.component';
+import { MedicalIssuesViewComponent } from './component/MedicalSection/MedicalIssues/medical-issues-view/medical-issues-view.component';
+import { MedicalIssuesEditComponent } from './component/MedicalSection/MedicalIssues/medical-issues-edit/medical-issues-edit.component';
+import { MedicalFilessCreateComponent } from './component/MedicalSection/MedicalFiles/medical-filess-create/medical-filess-create.component';
+import { MedicalFilessEditComponent } from './component/MedicalSection/MedicalFiles/medical-filess-edit/medical-filess-edit.component';
+import { MedicalFilessViewComponent } from './component/MedicalSection/MedicalFiles/medical-filess-view/medical-filess-view.component';
+import { MedicalRecordCreateComponent } from './component/MedicalSection/MedicalRecord/medical-record-create/medical-record-create.component';
+import { MedicalRecordEditComponent } from './component/MedicalSection/MedicalRecord/medical-record-edit/medical-record-edit.component';
+import { MedicalRecordViewComponent } from './component/MedicalSection/MedicalRecord/medical-record-view/medical-record-view.component';
+import { MedicalIssuesCommentViewComponent } from './component/MedicalSection/MedicalIssuesComment/medical-issues-comment-view/medical-issues-comment-view.component';
+import { MedicalIssuesCommentCreateComponent } from './component/MedicalSection/MedicalIssuesComment/medical-issues-comment-create/medical-issues-comment-create.component';
+import { MedicalIssuesCommentEditComponent } from './component/MedicalSection/MedicalIssuesComment/medical-issues-comment-edit/medical-issues-comment-edit.component';
+import { MedicalCenterCreateComponent } from './component/MedicalSection/MedicalCenter/medical-center-create/medical-center-create.component';
+import { MedicalCenterEditComponent } from './component/MedicalSection/MedicalCenter/medical-center-edit/medical-center-edit.component';
+import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCenter/medical-center-view/medical-center-view.component';
+import { MedicalViewComponent } from './component/MedicalSection/medical-view/medical-view.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +50,23 @@ import { AuthInterceptor } from './Shared/authconfig.interceptor';
     TradeEditComponent,
     NavbarComponent,
     ConfirmDialogComponent,
-    HomeComponent
+    HomeComponent,
+    MedicalIssuesCreateComponent,
+    MedicalIssuesViewComponent,
+    MedicalIssuesEditComponent,
+    MedicalFilessCreateComponent,
+    MedicalFilessEditComponent,
+    MedicalFilessViewComponent,
+    MedicalRecordCreateComponent,
+    MedicalRecordEditComponent,
+    MedicalRecordViewComponent,
+    MedicalIssuesCommentViewComponent,
+    MedicalIssuesCommentCreateComponent,
+    MedicalIssuesCommentEditComponent,
+    MedicalCenterCreateComponent,
+    MedicalCenterEditComponent,
+    MedicalCenterViewComponent,
+    MedicalViewComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ namespace MRMS.Model.CommonSection
         public string Address { get; set; } = default!;
 
 
-        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email format is not valid.")]
+        
         [Display(Name = "Email")]
         public string? Email { get; set; }
 

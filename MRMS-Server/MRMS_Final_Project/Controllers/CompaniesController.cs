@@ -23,6 +23,17 @@ namespace MRMS_Final_Project.Controllers
         {
             return _comparyRepo.GetAll();
         }
+        // Get Company by CompanyId
+        [HttpGet("{companyId}")]
+        public ActionResult<Company> GetCompanyByCompanyId(int companyId)
+        {
+            Company company = _comparyRepo.Get(companyId);
+            if (company is not null)
+            {
+                return company;
+            }
+            return NotFound();
+        }
         // Insert Company
         [HttpPost]
         public IActionResult PostCompany(Company Company)
@@ -44,10 +55,10 @@ namespace MRMS_Final_Project.Controllers
             return Ok(Company);
         }
         // Delete Company
-        [HttpDelete]
-        public IActionResult DeleteCompany(int id)
+        [HttpDelete("{companyID}")]
+        public IActionResult DeleteCompany(int companyId)
         {
-            Company Company = _comparyRepo.Get(id);
+            Company Company = _comparyRepo.Get(companyId);
             if (Company == null)
             {
                 return NotFound();

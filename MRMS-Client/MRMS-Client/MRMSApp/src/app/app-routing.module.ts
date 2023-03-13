@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
+import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
+import { CompanyViewComponent } from './component/company/company-view/company-view.component';
 import { DemandCreateComponent } from './component/demandSection/demand-create/demand-create.component';
 import { DemandEditComponent } from './component/demandSection/demand-edit/demand-edit.component';
 import { DemandViewComponent } from './component/demandSection/demand-view/demand-view.component';
@@ -24,7 +27,11 @@ const routes: Routes = [
   { path: 'medical-view', component: MedicalViewComponent },
   { path: 'medicalCenter', component: MedicalCenterViewComponent },
   { path: 'medicalCenterCreate', component: MedicalCenterCreateComponent },
-  { path: 'medicalCenterEdit/:id', component: MedicalCenterEditComponent }
+  { path: 'medicalCenterEdit/:id', component: MedicalCenterEditComponent },
+  { path: 'company', component: CompanyViewComponent },
+  { path: 'company-view', component: CompanyViewComponent },
+  { path: 'company-create', component: CompanyCreateComponent },
+  { path: 'company-edit/:id', component: CompanyEditComponent }
 ];
 
 @NgModule({

@@ -38,6 +38,9 @@ import { MedicalCenterCreateComponent } from './component/MedicalSection/Medical
 import { MedicalCenterEditComponent } from './component/MedicalSection/MedicalCenter/medical-center-edit/medical-center-edit.component';
 import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCenter/medical-center-view/medical-center-view.component';
 import { MedicalViewComponent } from './component/MedicalSection/medical-view/medical-view.component';
+import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
+import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
+import { CompanyViewComponent } from './component/company/company-view/company-view.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { MedicalViewComponent } from './component/MedicalSection/medical-view/me
     MedicalCenterCreateComponent,
     MedicalCenterEditComponent,
     MedicalCenterViewComponent,
-    MedicalViewComponent
+    MedicalViewComponent,
+    CompanyCreateComponent,
+    CompanyEditComponent,
+    CompanyViewComponent
   ],
   imports: [
     BrowserModule,

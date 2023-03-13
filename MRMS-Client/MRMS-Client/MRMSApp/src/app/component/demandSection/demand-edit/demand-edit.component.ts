@@ -85,7 +85,6 @@ export class DemandEditComponent {
         this.notificationSvc.message("Failed to load Demand List!!", "DISMISS");
       })
 
-
     this.companySvc.get()
       .subscribe(r => {
         this.company = r;

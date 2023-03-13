@@ -17,17 +17,17 @@ namespace MRMS.Model.DemandSection
         public string JobTitle { get; set; } = default!;
 
 
-        [Required(ErrorMessage = "Please enter male quota"), MaxLength(5)]
+        [Required(ErrorMessage = "Please enter male quota"), Range(0, 999)]
         [Display(Name = "Male Quota")]
         public int MaleQuota { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter female quota"), MaxLength(5)]
+        [Required(ErrorMessage = "Please enter female quota"), Range(0, 999)]
         [Display(Name = "Female Quota")]
         public int FemaleQuota { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter age"), MaxLength(3)]
+        [Required(ErrorMessage = "Please enter age"), Range(0, 100)]
         [Display(Name = "Age")]
         public int Age { get; set; }
 
@@ -37,15 +37,17 @@ namespace MRMS.Model.DemandSection
         public decimal Salary { get; set; }
 
 
-        public char? Currency { get; set; }
+        [Required(ErrorMessage = "Please enter Specified Currency")]
+        [StringLength(10, ErrorMessage = "Please do not enter values over 10 characters")]
+        public string Currency { get; set; } = default!;
 
 
-        [Required(ErrorMessage = "Please enter working hours"), MaxLength(2)]
+        [Required(ErrorMessage = "Please enter working hours")]
         [Display(Name = "Working Hours")]
         public int WorkingHours { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter over time"), MaxLength(2)]
+        [Required(ErrorMessage = "Please enter over time")]
         [Display(Name = "Working Hours")]
         public int OverTime { get; set; }
 

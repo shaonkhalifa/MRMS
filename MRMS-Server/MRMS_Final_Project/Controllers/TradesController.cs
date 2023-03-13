@@ -25,13 +25,24 @@ namespace MRMS_Final_Project.Controllers
         {
             return _tradeRepo.GetAll();
         }
+
+        [HttpGet("{tradeId}")]
+        public ActionResult<Trade> GetTradeByTradeId(int tradeId)
+        {
+            Trade trade = _tradeRepo.Get(tradeId);
+            if (trade is not null)
+            {
+                return trade;
+            }
+            return NotFound();
+        }
+
         [HttpPost]
         public IActionResult PostTrade(Trade trade)
         {
             _tradeRepo.Insert(trade);
             _globalRepo.Save();
-            return Ok(trade);
-
+            return CreatedAtAction(nameof(GetTradeByTradeId), new { TradeId = trade.TradeId }, trade);
         }
 
         [HttpPut]

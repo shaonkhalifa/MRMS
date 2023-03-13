@@ -35,10 +35,10 @@ export class TradeViewComponent {
   ) { }
 
 
-  //applyFilter(event: Event) {
-  //  const filterValue = (event.target as HTMLInputElement).value;
-  //  this.dataSource.filter = filterValue.trim().toLowerCase();
-  //}
+  applyFilter(event: Event) {
+   const filterValue = (event.target as HTMLInputElement).value;
+   this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 
   getDemandName(id: number) {
@@ -71,7 +71,7 @@ export class TradeViewComponent {
     //console.log(data);
     this.dialog.open(ConfirmDialogComponent, {
       width: '450px',
-      enterAnimationDuration: '500ms'
+      enterAnimationDuration: '400ms'
     }).afterClosed()
       .subscribe(result => {
         //console.log(result);

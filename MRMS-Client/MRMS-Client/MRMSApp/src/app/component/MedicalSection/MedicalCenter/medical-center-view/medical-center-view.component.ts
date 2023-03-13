@@ -30,7 +30,7 @@ export class MedicalCenterViewComponent {
     //console.log(data);
     this.dialog.open(ConfirmDialogComponent, {
       width: '450px',
-      enterAnimationDuration: '800ms'
+      enterAnimationDuration: '400ms'
     }).afterClosed()
       .subscribe(result => {
         //console.log(result);
@@ -57,11 +57,11 @@ export class MedicalCenterViewComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  filterDate(queryDate: any) {
-    //const filterDate = new Date(queryDate); 
-    this.dataSource.filter = queryDate.toISOString().split('T')[0];
-    this.medicalCenter;
-  }
+  //filterDate(queryDate: any) {
+  //  //const filterDate = new Date(queryDate); 
+  //  this.dataSource.filter = queryDate.toISOString().split('T')[0];
+  //  this.medicalCenter;
+  //}
 
   ngOnInit(): void {
 

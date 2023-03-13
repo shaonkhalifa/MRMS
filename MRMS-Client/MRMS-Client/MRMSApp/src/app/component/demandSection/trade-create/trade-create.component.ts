@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./trade-create.component.css']
 })
 export class TradeCreateComponent {
-  pattern = '^(\\d{1,3}(\\,\\d{3})*|(\\d+))(\\.\\d{2})?$';
 
   trade: Trade = new Trade();
   tradeForm: FormGroup = new FormGroup({
@@ -63,7 +62,7 @@ export class TradeCreateComponent {
     this.tradeSvc.insert(this.trade)
       .subscribe(r => {
         this.notificationSvc.message("Data saved successfully!!!", "DISMISS");
-        this.router.navigate(['/demand']);
+        this.router.navigate(['/trade']);
         this.tradeForm.reset({});
         console.log(r);
       }, err => {

@@ -59,7 +59,7 @@
 
       <mat-form-field appearance="fill" class="f-w mb-1">
         <mat-label>Salary</mat-label>
-        <input matInput formControlName="salary" [pattern]="pattern">
+        <input matInput formControlName="salary">
         <mat-error *ngIf="tradeForm.controls['salary'].hasError('required')">
           <strong>Salary</strong>
           required

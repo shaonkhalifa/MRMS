@@ -15,7 +15,7 @@ export class TradeService {
   get(): Observable<Trade[]> {
     return this.http.get<Trade[]>(`${apiUrl}/Trades`);
   }
- 
+
   getById(id: number): Observable<Trade> {
     return this.http.get<Trade>(`${apiUrl}/Trades/${id}`);
   }
@@ -23,7 +23,7 @@ export class TradeService {
     return this.http.post<Trade>(`${apiUrl}/Trades`, data);
   }
   update(data: Trade): Observable<any> {
-    return this.http.put<any>(`${apiUrl}/Trades/${data.tradeId}`, data);
+    return this.http.put<any>(`${apiUrl}/Trades`, data);
   }
   delete(data: Trade): Observable<any> {
     return this.http.delete<any>(`${apiUrl}/Trades/${data.tradeId}`);

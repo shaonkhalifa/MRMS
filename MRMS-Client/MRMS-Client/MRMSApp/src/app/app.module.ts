@@ -41,6 +41,10 @@ import { MedicalViewComponent } from './component/MedicalSection/medical-view/me
 import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
 import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
 import { CompanyViewComponent } from './component/company/company-view/company-view.component';
+import { AgentCreateComponent } from './component/agentSection/agent-create/agent-create.component';
+import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
+import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
+import { AgentService } from './services/Agents/agents.service';
 
 @NgModule({
   declarations: [
@@ -72,7 +76,11 @@ import { CompanyViewComponent } from './component/company/company-view/company-v
     MedicalViewComponent,
     CompanyCreateComponent,
     CompanyEditComponent,
-    CompanyViewComponent
+    CompanyViewComponent,
+    AgentCreateComponent,
+    AgentEditComponent,
+    AgentViewComponent,
+    AgentEditComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +92,7 @@ import { CompanyViewComponent } from './component/company/company-view/company-v
     LayoutModule,
     MatModule
   ],
-  providers: [HttpClient,DemandService,TradeService,NotificationService,DatePipe,
+  providers: [HttpClient, DemandService, TradeService, NotificationService, AgentService, DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

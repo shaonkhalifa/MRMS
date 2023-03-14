@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AgentCreateComponent } from './component/agentSection/agent-create/agent-create.component';
+import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
+import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
 import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
 import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
 import { CompanyViewComponent } from './component/company/company-view/company-view.component';
@@ -31,7 +34,11 @@ const routes: Routes = [
   { path: 'company', component: CompanyViewComponent },
   { path: 'company-view', component: CompanyViewComponent },
   { path: 'company-create', component: CompanyCreateComponent },
-  { path: 'company-edit/:id', component: CompanyEditComponent }
+  { path: 'company-edit/:id', component: CompanyEditComponent },
+  { path: 'agent', component: AgentViewComponent },
+  { path: 'agent-view', component: AgentViewComponent },
+  { path: 'agent-create', component: AgentCreateComponent },
+  { path: 'agent-edit/:id', component: AgentEditComponent }
 ];
 
 @NgModule({

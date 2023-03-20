@@ -57,12 +57,10 @@ namespace MRMS.Model.CommonSection
         public string? NID { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter birth certificate no")]
         [Display(Name = "Birth Certificate")]
         public string? BirthCertificateNo { get; set; }
 
 
-        [Required(ErrorMessage = "Please enter email")]
         [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email format is not valid.")]
         [Display(Name = "Email")]
         public string? Email { get; set; }

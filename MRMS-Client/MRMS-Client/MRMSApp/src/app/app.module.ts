@@ -45,6 +45,9 @@ import { AgentCreateComponent } from './component/agentSection/agent-create/agen
 import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
 import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
 import { AgentService } from './services/Agents/agents.service';
+import { ApplicantViewComponent } from './component/applicantSection/applicant-view/applicant-view.component';
+import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
+import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import { AgentService } from './services/Agents/agents.service';
     AgentCreateComponent,
     AgentEditComponent,
     AgentViewComponent,
-    AgentEditComponent
+    AgentEditComponent,
+    ApplicantViewComponent,
+    ApplicantCreateComponent,
+    ApplicantEditComponent
   ],
   imports: [
     BrowserModule,

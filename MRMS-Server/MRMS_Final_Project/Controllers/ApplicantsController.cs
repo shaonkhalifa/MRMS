@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MRMS.DAL;
 using MRMS.Model.ApplicantSection;
+using MRMS.Model.DemandSection;
 using MRMS.Model.ViewModels;
 
 namespace MRMS_Final_Project.Controllers
@@ -29,6 +30,18 @@ namespace MRMS_Final_Project.Controllers
         {
             return _applicantRepository.GetAll();
         }
+        //GetyId
+        [HttpGet("{applicantId}")]
+        public ActionResult<Applicant> GetApplicantByApplicantId(int applicantId)
+        {
+            Applicant applicant = _applicantRepository.Get(applicantId);
+            if (applicant is not null)
+            {
+                return applicant;
+            }
+            return NotFound();
+        }
+
         // Insert: 
         [HttpPost]
         public ActionResult ApplicantPost([FromForm] ApplicantVM applicantVM)
@@ -65,18 +78,22 @@ namespace MRMS_Final_Project.Controllers
                     MaritalStatus = applicantVM.MaritalStatus,
                     Education = applicantVM.Education
                 };
-                string path = _env.WebRootPath + "\\Uploads\\";
-                string ext = Path.GetExtension(applicantVM.Picture.FileName);
-                string f = Guid.NewGuid() + ext;
-                if (!Directory.Exists(path))
+                if (applicantVM.Picture != null)
                 {
-                    Directory.CreateDirectory(path);
+                    string path = _env.WebRootPath + "\\Uploads\\";
+                    string ext = Path.GetExtension(applicantVM.PictureFile.FileName);
+                    string f = Guid.NewGuid() + ext;
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    using FileStream fileStream = System.IO.File.Create(path + f);
+                    applicantVM.PictureFile.CopyTo(fileStream);
+                    fileStream.Flush();
+                    applicant.Picture = f;
+                    fileStream.Close();
                 }
-                using FileStream fileStream = System.IO.File.Create(path + f);
-                applicantVM.Picture.CopyTo(fileStream);
-                fileStream.Flush();
-                applicant.Picture = f;
-                fileStream.Close();
+
                 _applicantRepository.Insert(applicant);
                 _globalRepository.Save();
                 return Ok(applicant);
@@ -123,18 +140,22 @@ namespace MRMS_Final_Project.Controllers
                     MaritalStatus = applicantVM.MaritalStatus,
                     Education = applicantVM.Education
                 };
-                string path = _env.WebRootPath + "\\Uploads\\";
-                string ext = Path.GetExtension(applicantVM.Picture.FileName);
-                string f = Guid.NewGuid() + ext;
-                if (!Directory.Exists(path))
+                if(applicantVM.PictureFile!= null)
                 {
-                    Directory.CreateDirectory(path);
+                    string path = _env.WebRootPath + "\\Uploads\\";
+                    string ext = Path.GetExtension(applicantVM.PictureFile.FileName);
+                    string f = Guid.NewGuid() + ext;
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    using FileStream fileStream = System.IO.File.Create(path + f);
+                    applicantVM.PictureFile.CopyTo(fileStream);
+                    fileStream.Flush();
+                    applicant.Picture = f;
+                    fileStream.Close();
                 }
-                using FileStream fileStream = System.IO.File.Create(path + f);
-                applicantVM.Picture.CopyTo(fileStream);
-                fileStream.Flush();
-                applicant.Picture = f;
-                fileStream.Close();
+
                 _applicantRepository.Update(applicant);
                 _globalRepository.Save();
                 return Ok(applicant);

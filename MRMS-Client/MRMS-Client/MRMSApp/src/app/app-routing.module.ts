@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgentCreateComponent } from './component/agentSection/agent-create/agent-create.component';
 import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
 import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
+import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
+import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
+import { ApplicantViewComponent } from './component/applicantSection/applicant-view/applicant-view.component';
 import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
 import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
 import { CompanyViewComponent } from './component/company/company-view/company-view.component';
@@ -38,7 +41,10 @@ const routes: Routes = [
   { path: 'agent', component: AgentViewComponent },
   { path: 'agent-view', component: AgentViewComponent },
   { path: 'agent-create', component: AgentCreateComponent },
-  { path: 'agent-edit/:id', component: AgentEditComponent }
+  { path: 'agent-edit/:id', component: AgentEditComponent },
+  { path: 'applicant', component: ApplicantViewComponent },
+  { path: 'applicant-create', component: ApplicantCreateComponent },
+  { path: 'applicant-edit/:id', component: ApplicantEditComponent }
 ];
 
 @NgModule({

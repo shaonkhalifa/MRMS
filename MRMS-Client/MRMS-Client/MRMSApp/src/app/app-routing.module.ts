@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AgentCreateComponent } from './component/agentSection/agent-create/agent-create.component';
+import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
+import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
+import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
+import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
+import { ApplicantViewComponent } from './component/applicantSection/applicant-view/applicant-view.component';
+import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
+import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
+import { CompanyViewComponent } from './component/company/company-view/company-view.component';
 import { DemandCreateComponent } from './component/demandSection/demand-create/demand-create.component';
 import { DemandEditComponent } from './component/demandSection/demand-edit/demand-edit.component';
 import { DemandViewComponent } from './component/demandSection/demand-view/demand-view.component';
@@ -12,6 +21,7 @@ import { MedicalViewComponent } from './component/MedicalSection/medical-view/me
 import { MedicalCenterCreateComponent } from './component/MedicalSection/MedicalCenter/medical-center-create/medical-center-create.component';
 import { MedicalCenterEditComponent } from './component/MedicalSection/MedicalCenter/medical-center-edit/medical-center-edit.component';
 import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCenter/medical-center-view/medical-center-view.component';
+import { MedicalRecordViewComponent } from './component/MedicalSection/MedicalRecord/medical-record-view/medical-record-view.component';
 import { FileContainerComponent } from './component/shared/file-container/file-container.component';
 
 const routes: Routes = [
@@ -23,11 +33,24 @@ const routes: Routes = [
   { path: 'trade', component: TradeViewComponent },
   { path: 'trade-create', component: TradeCreateComponent },
   { path: 'trade-edit/:id', component: TradeEditComponent },
-  { path: 'medical-views', component: FileContainerComponent },
+  { path: 'FileContainer', component: FileContainerComponent },
   { path: 'medicalCenter', component: MedicalCenterViewComponent },
   { path: 'medicalCenterCreate', component: MedicalCenterCreateComponent },
   { path: 'medicalCenterEdit/:id', component: MedicalCenterEditComponent },
-  { path:'medical-view',component:DemandFileCreateComponent}
+  { path: 'demandFile',component:DemandFileCreateComponent},
+  { path: 'company', component: CompanyViewComponent },
+  { path: 'company-view', component: CompanyViewComponent },
+  { path: 'company-create', component: CompanyCreateComponent },
+  { path: 'company-edit/:id', component: CompanyEditComponent },
+  { path: 'agent', component: AgentViewComponent },
+  { path: 'agent-view', component: AgentViewComponent },
+  { path: 'agent-create', component: AgentCreateComponent },
+  { path: 'agent-edit/:id', component: AgentEditComponent },
+  { path: 'applicant', component: ApplicantViewComponent },
+  { path: 'applicant-create', component: ApplicantCreateComponent },
+  { path: 'applicant-edit/:id', component: ApplicantEditComponent }
+
+
 ];
 
 @NgModule({

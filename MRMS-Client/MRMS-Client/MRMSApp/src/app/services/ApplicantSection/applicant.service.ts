@@ -13,19 +13,19 @@ export class ApplicantService {
     private http: HttpClient
   ) { }
   get(): Observable<Applicant[]> {
-    return this.http.get<Applicant[]>(`${apiUrl}/Applicant`);
+    return this.http.get<Applicant[]>(`${apiUrl}/Applicants`);
   }
 
   getById(id: number): Observable<Applicant> {
-    return this.http.get<Applicant>(`${apiUrl}/Applicant/${id}`);
+    return this.http.get<Applicant>(`${apiUrl}/Applicants/${id}`);
   }
-  insert(data: Applicant): Observable<Applicant> {
-    return this.http.post<Applicant>(`${apiUrl}/Applicant`, data);
+  insert(data: FormData): Observable<Applicant> {
+    return this.http.post<Applicant>(`${apiUrl}/Applicants`, data);
   }
-  update(data: Applicant): Observable<any> {
-    return this.http.put<any>(`${apiUrl}/Applicant/${data.applicantId}`, data);
+  update(data: FormData): Observable<any> {
+    return this.http.put<any>(`${apiUrl}/Applicants`, data);
   }
   delete(data: Applicant): Observable<any> {
-    return this.http.delete<any>(`${apiUrl}/Applicant/${data.applicantId}`);
+    return this.http.delete<any>(`${apiUrl}/Applicants/${data.applicantId}`);
   }
 }

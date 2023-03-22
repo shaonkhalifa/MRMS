@@ -70,8 +70,11 @@ export class DemandViewComponent {
   }
 
   filterDate(queryDate: any) {
-    //const filterDate = new Date(queryDate); 
-    this.dataSource.filter = queryDate.toISOString().split('T')[0];
+    //getTimezoneOffset() method to get the difference between the timezone of the computer and UTC time, in minutes
+    var offset = queryDate.getTimezoneOffset() * 60 * 1000;
+    var utcDate = new Date(queryDate.getTime() - offset);
+    var data = utcDate.toISOString().split('T')[0];
+    this.dataSource.filter = data;
     this.demand;
   }
 

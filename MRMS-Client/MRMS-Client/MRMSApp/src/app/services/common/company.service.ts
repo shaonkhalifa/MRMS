@@ -23,7 +23,7 @@ export class CompanyService {
     return this.http.post<Company>(`${apiUrl}/Companies`, data);
   }
   update(data: Company): Observable<any> {
-    return this.http.put<any>(`${apiUrl}/Companies/${data.companyId}`, data);
+    return this.http.put<any>(`${apiUrl}/Companies`, data);
   }
   delete(data: Company): Observable<any> {
     return this.http.delete<any>(`${apiUrl}/Companies/${data.companyId}`);

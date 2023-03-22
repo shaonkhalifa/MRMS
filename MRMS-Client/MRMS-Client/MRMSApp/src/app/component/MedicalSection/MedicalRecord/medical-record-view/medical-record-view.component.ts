@@ -11,8 +11,8 @@ import { Demand } from '../../../../models/demandSection/demand';
 import { MedicalCenter } from '../../../../models/MedicalSection/medical-center';
 import { MedicalRecord } from '../../../../models/MedicalSection/medical-record';
 import { medicalStatus } from '../../../../models/shared/enum-list';
-import { AgentSyndicateService } from '../../../../services/AgentSection/agent-syndicate.service';
-import { AgencyService } from '../../../../services/AgentSection/agent.service';
+import { AgencySyndicateService } from '../../../../services/agencySection/agency-syndicate.service';
+import { AgencyService } from '../../../../services/agencySection/agency.service';
 import { ApplicantService } from '../../../../services/ApplicantSection/applicant.service';
 import { DemandService } from '../../../../services/demandSection/demand.service';
 import { MedicalCenterService } from '../../../../services/MedicalSection/medical-center.service';
@@ -41,7 +41,7 @@ export class MedicalRecordViewComponent {
     private demandSvc: DemandService,
     private medicalRecSvc: MedicalRecordsService,
     private applicantSvc: ApplicantService,
-    private agecySyndicateSvc: AgentSyndicateService,
+    private agecySyndicateSvc: AgencySyndicateService,
     private agencySvc: AgencyService,
     private medicalCenterSvc:MedicalCenterService,
     private notificationSvc: NotificationService,

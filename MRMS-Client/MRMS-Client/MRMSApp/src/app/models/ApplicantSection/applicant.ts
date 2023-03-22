@@ -22,6 +22,7 @@ export class Applicant {
     public email?: string,
     public nationality?: string,
     public picture?: string,
+    public pictureFile?: File,
     public gender?: gender,
     public religion?: religion ,
     public maritalStatus?: maritalStatus,

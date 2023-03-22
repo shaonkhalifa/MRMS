@@ -42,6 +42,17 @@ import { FileContainerComponent } from './component/shared/file-container/file-c
 import { DemandFileCreateComponent } from './component/demandSection/demandFile/demand-file-create/demand-file-create.component';
 import { DemandFileEditComponent } from './component/demandSection/demandFile/demand-file-edit/demand-file-edit.component';
 import { DemandFileViewComponent } from './component/demandSection/demandFile/demand-file-view/demand-file-view.component';
+import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
+import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
+import { CompanyViewComponent } from './component/company/company-view/company-view.component';
+import { AgentCreateComponent } from './component/agentSection/agent-create/agent-create.component';
+import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
+import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
+import { AgentService } from './services/Agents/agents.service';
+import { ApplicantViewComponent } from './component/applicantSection/applicant-view/applicant-view.component';
+import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
+import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -74,7 +85,18 @@ import { DemandFileViewComponent } from './component/demandSection/demandFile/de
     FileContainerComponent,
     DemandFileCreateComponent,
     DemandFileEditComponent,
-    DemandFileViewComponent
+    DemandFileViewComponent,
+    CompanyCreateComponent,
+    CompanyEditComponent,
+    CompanyViewComponent,
+    AgentCreateComponent,
+    AgentEditComponent,
+    AgentViewComponent,
+    AgentEditComponent,
+    ApplicantViewComponent,
+    ApplicantCreateComponent,
+    ApplicantEditComponent
+
   ],
   imports: [
     BrowserModule,
@@ -86,7 +108,7 @@ import { DemandFileViewComponent } from './component/demandSection/demandFile/de
     LayoutModule,
     MatModule
   ],
-  providers: [HttpClient,DemandService,TradeService,NotificationService,DatePipe,
+  providers: [HttpClient, DemandService, TradeService, NotificationService, AgentService, DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

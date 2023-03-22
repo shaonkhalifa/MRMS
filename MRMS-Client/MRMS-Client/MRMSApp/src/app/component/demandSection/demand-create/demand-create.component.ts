@@ -37,7 +37,7 @@ export class DemandCreateComponent {
 
     Object.assign(this.demand, this.demandForm.value);
     console.log(this.demand);
-   
+
     this.demand.title = this.f()['title'].value;
     this.demand.demandExpiryDate = this.f()['demandExpiryDate'].value;
     this.demand.demandExpiryDate = new Date(<string>this.datePipe.transform(this.demand.demandExpiryDate, "yyyy-MM-dd"));

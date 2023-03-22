@@ -309,7 +309,7 @@ namespace MRMS.DAL.Migrations
                     FemaleQuota = table.Column<int>(type: "int", maxLength: 5, nullable: false),
                     Age = table.Column<int>(type: "int", maxLength: 3, nullable: false),
                     Salary = table.Column<decimal>(type: "money", nullable: false),
-                    Currency = table.Column<string>(type: "nvarchar(1)", nullable: true),
+                    Currency = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     WorkingHours = table.Column<int>(type: "int", maxLength: 2, nullable: false),
                     OverTime = table.Column<int>(type: "int", maxLength: 2, nullable: false),
                     Food = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),

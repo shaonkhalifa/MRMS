@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DemandCreateComponent } from './component/demandSection/demand-create/demand-create.component';
 import { DemandEditComponent } from './component/demandSection/demand-edit/demand-edit.component';
 import { DemandViewComponent } from './component/demandSection/demand-view/demand-view.component';
+import { DemandFileCreateComponent } from './component/demandSection/demandFile/demand-file-create/demand-file-create.component';
 import { TradeCreateComponent } from './component/demandSection/trade-create/trade-create.component';
 import { TradeEditComponent } from './component/demandSection/trade-edit/trade-edit.component';
 import { TradeViewComponent } from './component/demandSection/trade-view/trade-view.component';
@@ -11,6 +12,7 @@ import { MedicalViewComponent } from './component/MedicalSection/medical-view/me
 import { MedicalCenterCreateComponent } from './component/MedicalSection/MedicalCenter/medical-center-create/medical-center-create.component';
 import { MedicalCenterEditComponent } from './component/MedicalSection/MedicalCenter/medical-center-edit/medical-center-edit.component';
 import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCenter/medical-center-view/medical-center-view.component';
+import { FileContainerComponent } from './component/shared/file-container/file-container.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,10 +23,11 @@ const routes: Routes = [
   { path: 'trade', component: TradeViewComponent },
   { path: 'trade-create', component: TradeCreateComponent },
   { path: 'trade-edit/:id', component: TradeEditComponent },
-  { path: 'medical-view', component: MedicalViewComponent },
+  { path: 'medical-views', component: FileContainerComponent },
   { path: 'medicalCenter', component: MedicalCenterViewComponent },
   { path: 'medicalCenterCreate', component: MedicalCenterCreateComponent },
-  { path: 'medicalCenterEdit/:id', component: MedicalCenterEditComponent }
+  { path: 'medicalCenterEdit/:id', component: MedicalCenterEditComponent },
+  { path:'medical-view',component:DemandFileCreateComponent}
 ];
 
 @NgModule({

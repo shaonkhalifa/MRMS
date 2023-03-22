@@ -38,6 +38,10 @@ import { MedicalCenterCreateComponent } from './component/MedicalSection/Medical
 import { MedicalCenterEditComponent } from './component/MedicalSection/MedicalCenter/medical-center-edit/medical-center-edit.component';
 import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCenter/medical-center-view/medical-center-view.component';
 import { MedicalViewComponent } from './component/MedicalSection/medical-view/medical-view.component';
+import { FileContainerComponent } from './component/shared/file-container/file-container.component';
+import { DemandFileCreateComponent } from './component/demandSection/demandFile/demand-file-create/demand-file-create.component';
+import { DemandFileEditComponent } from './component/demandSection/demandFile/demand-file-edit/demand-file-edit.component';
+import { DemandFileViewComponent } from './component/demandSection/demandFile/demand-file-view/demand-file-view.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { MedicalViewComponent } from './component/MedicalSection/medical-view/me
     MedicalCenterCreateComponent,
     MedicalCenterEditComponent,
     MedicalCenterViewComponent,
-    MedicalViewComponent
+    MedicalViewComponent,
+    FileContainerComponent,
+    DemandFileCreateComponent,
+    DemandFileEditComponent,
+    DemandFileViewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,72 @@
+<mat-card class="mat-elevation-z3">
+  <mat-card-header>
+
+    <mat-card-title>Add File</mat-card-title>
+    <mat-card-subtitle>Add new File entry</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [formGroup]="filecontainerForm" class="form-container" (ngSubmit)="save()">
+
+      <div class="f-w f-w-flex">
+        <h4>File</h4><button type="button" mat-icon-button (click)="addItem()"><mat-icon>add</mat-icon></button>
+      </div>
+      <ng-container formArrayName="fileContainerarray">
+        <ng-container *ngFor="let p of fileContainerFormArray.controls; let i = index">
+          <div [formGroupName]="i" class="item-row">
+            <mat-form-field class="f-w" appearance="fill">
+              <mat-label>FIle</mat-label>
+              <mat-select formControlName="fileTypeId">
+                <mat-option *ngFor="let f of fileTypes" [value]="f.fileTypeId">{{f.name}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="fileContainerFormArray.controls[i].get('fileTypeId')?.hasError('required')">File id <strong>required</strong></mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="f-w mb-1">
+              <mat-label>File</mat-label>
+              <button type="button" mat-icon-button matPrefix (click)="f_input.click()">
+                <mat-icon>attach_file</mat-icon>
+              </button>
+              <input type="text" readonly matInput formControlName="filepath" />
+              <input type="file"
+                     multiple
+                     hidden
+                     #f_input
+                     (change)="handleFileInputChange($event)" />
+              <mat-error *ngIf="fileContainerFormArray.controls[i].get('filepath')?.hasError('required')">this field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="f-w mb-1">
+              <mat-label>Description</mat-label>
+              <input matInput formControlName="description">
+              <mat-error *ngIf="fileContainerFormArray.controls[i].get('description')?.hasError('required')">
+                <strong>
+                  File Description
+                </strong> required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="f-w">
+              <mat-label>Entry Date</mat-label>
+              <input matInput formControlName="date" [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="fileContainerFormArray.controls[i].get('date')?.hasError('required')"><strong>File Entry Date</strong> required</mat-error> 
+            </mat-form-field>
+            <button type="button" mat-icon-button (click)="removeItem(i)"><mat-icon>delete</mat-icon></button>
+          </div>
+        </ng-container>
+      </ng-container>
+
+     
+
+      
+
+      <!--<div class="f-w mb-1">
+        <button type="submit" mat-raised-button color="primary" [disabled]="productForm.invalid">Save</button>
+      </div>-->
+    </form>
+
+
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-flat-button [routerLink]="['/customers']">Back to list</a>
+  </mat-card-actions>
+</mat-card>

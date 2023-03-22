@@ -38,6 +38,10 @@ import { MedicalCenterCreateComponent } from './component/MedicalSection/Medical
 import { MedicalCenterEditComponent } from './component/MedicalSection/MedicalCenter/medical-center-edit/medical-center-edit.component';
 import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCenter/medical-center-view/medical-center-view.component';
 import { MedicalViewComponent } from './component/MedicalSection/medical-view/medical-view.component';
+import { FileContainerComponent } from './component/shared/file-container/file-container.component';
+import { DemandFileCreateComponent } from './component/demandSection/demandFile/demand-file-create/demand-file-create.component';
+import { DemandFileEditComponent } from './component/demandSection/demandFile/demand-file-edit/demand-file-edit.component';
+import { DemandFileViewComponent } from './component/demandSection/demandFile/demand-file-view/demand-file-view.component';
 import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
 import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
 import { CompanyViewComponent } from './component/company/company-view/company-view.component';
@@ -48,6 +52,7 @@ import { AgentService } from './services/Agents/agents.service';
 import { ApplicantViewComponent } from './component/applicantSection/applicant-view/applicant-view.component';
 import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
 import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -77,6 +82,10 @@ import { ApplicantEditComponent } from './component/applicantSection/applicant-e
     MedicalCenterEditComponent,
     MedicalCenterViewComponent,
     MedicalViewComponent,
+    FileContainerComponent,
+    DemandFileCreateComponent,
+    DemandFileEditComponent,
+    DemandFileViewComponent,
     CompanyCreateComponent,
     CompanyEditComponent,
     CompanyViewComponent,
@@ -87,6 +96,7 @@ import { ApplicantEditComponent } from './component/applicantSection/applicant-e
     ApplicantViewComponent,
     ApplicantCreateComponent,
     ApplicantEditComponent
+
   ],
   imports: [
     BrowserModule,

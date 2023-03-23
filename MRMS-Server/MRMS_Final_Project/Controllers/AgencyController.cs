@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MRMS.DAL;
 using MRMS.Model.AgencySection;
+using MRMS.Model.CommonSection;
 using MRMS.Model.ViewModels;
 
 namespace MRMS_Final_Project.Controllers
@@ -27,42 +28,27 @@ namespace MRMS_Final_Project.Controllers
         {
             return _agencyRepository.GetAll();
         }
+        //Get Agency by agencyId
+        [HttpGet("{AgencyId}")]
+        public ActionResult<Agency> GetAgencyByAgentId(int agencyId)
+        {
+            var agency = _agencyRepository.Get(agencyId);
+
+            if (agency is not null)
+            {
+                return agency;
+            }
+            return NotFound();
+        }
 
         //Post Agency
         [HttpPost]
-        public IActionResult AgencyPost([FromForm] AgencyVM agencyVM)
+        public IActionResult AgencyPost(Agency agency)
         {
-            try
-            {
-                _globalRepository.BeginTransaction();
-                Agency agency = new Agency
-                {
-                    Name = agencyVM.Name,
-                    RL = agencyVM.RL,
-                    Address = agencyVM.Address,
-                    ContactNo = agencyVM.ContactNo,
-                    Manager = agencyVM.Manager,
-                    Accountant = agencyVM.Accountant
-                };
-                _agencyRepository.Insert(agency);
-                _globalRepository.Save();
+            _agencyRepository.Insert(agency);
+            _globalRepository.Save();
+            return Ok(agency);
 
-                AgencySyndicate agencySyndicate = new AgencySyndicate
-                {
-                    AgencyId = agencyVM.AgencyId
-                };
-                _syndicateRepository.Insert(agencySyndicate);
-                _globalRepository.Save();
-                _globalRepository.CommitTransaction();
-            }
-            catch (Exception)
-            {
-                _globalRepository.RollbackTransaction();
-            }
-            return Ok(agencyVM);
-            //_agencyRepository.Insert(agency);
-            //_globalRepository.Save();
-            //return Ok(agency);
         }
 
         //Update Agency

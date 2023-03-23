@@ -7,7 +7,7 @@ import { apiUrl } from '../../models/shared/app-constants';
 @Injectable({
   providedIn: 'root'
 })
-export class AgentService {
+export class AgencyService {
 
   constructor(
     private http: HttpClient
@@ -23,7 +23,7 @@ export class AgentService {
     return this.http.post<Agency>(`${apiUrl}/Agency`, data);
   }
   update(data: Agency): Observable<any> {
-    return this.http.put<any>(`${apiUrl}/Agency/${data.agencyId}`, data);
+    return this.http.put<any>(`${apiUrl}/Agency`, data);
   }
   delete(data: Agency): Observable<any> {
     return this.http.delete<any>(`${apiUrl}/Agency/${data.agencyId}`);

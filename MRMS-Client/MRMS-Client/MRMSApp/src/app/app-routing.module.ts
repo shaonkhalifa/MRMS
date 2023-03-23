@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AgencyCreateComponent } from './component/agency-section/agency-create/agency-create.component';
+import { AgencyEditComponent } from './component/agency-section/agency-edit/agency-edit.component';
+import { AgencyViewComponent } from './component/agency-section/agency-view/agency-view.component';
 import { AgentCreateComponent } from './component/agentSection/agent-create/agent-create.component';
 import { AgentEditComponent } from './component/agentSection/agent-edit/agent-edit.component';
 import { AgentViewComponent } from './component/agentSection/agent-view/agent-view.component';
@@ -44,7 +47,11 @@ const routes: Routes = [
   { path: 'agent-edit/:id', component: AgentEditComponent },
   { path: 'applicant', component: ApplicantViewComponent },
   { path: 'applicant-create', component: ApplicantCreateComponent },
-  { path: 'applicant-edit/:id', component: ApplicantEditComponent }
+  { path: 'applicant-edit/:id', component: ApplicantEditComponent },
+  { path: 'agency', component: AgencyViewComponent },
+  { path: 'agency-view', component: AgencyViewComponent },
+  { path: 'agency-create', component: AgencyCreateComponent },
+  { path: 'agency-edit/:id', component: AgencyEditComponent },
 ];
 
 @NgModule({

@@ -16,6 +16,9 @@ import { DemandService } from './services/demandSection/demand.service';
 import { TradeService } from './services/demandSection/trade.service';
 import { NotificationService } from './services/Shared/notification.service';
 import { DatePipe } from '@angular/common';
+import { AgencyViewComponent } from './component/agency-section/agency-view/agency-view.component';
+import { AgencyCreateComponent } from './component/agency-section/agency-create/agency-create.component';
+import { AgencyEditComponent } from './component/agency-section/agency-edit/agency-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatModule } from './module/shared/mat/mat.module';
@@ -86,7 +89,10 @@ import { ApplicantEditComponent } from './component/applicantSection/applicant-e
     AgentEditComponent,
     ApplicantViewComponent,
     ApplicantCreateComponent,
-    ApplicantEditComponent
+    ApplicantEditComponent,
+    AgencyViewComponent,
+    AgencyCreateComponent,
+    AgencyEditComponent
   ],
   imports: [
     BrowserModule,

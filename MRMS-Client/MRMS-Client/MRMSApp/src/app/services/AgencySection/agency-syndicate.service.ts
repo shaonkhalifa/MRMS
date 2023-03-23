@@ -7,7 +7,7 @@ import { apiUrl } from '../../models/shared/app-constants';
 @Injectable({
   providedIn: 'root'
 })
-export class AgentSyndicateService {
+export class AgencySyndicateService {
 
   constructor(
     private http: HttpClient

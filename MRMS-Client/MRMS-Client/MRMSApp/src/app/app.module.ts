@@ -19,7 +19,7 @@ import { DatePipe } from '@angular/common';
 import { AgencyViewComponent } from './component/agency-section/agency-view/agency-view.component';
 import { AgencyCreateComponent } from './component/agency-section/agency-create/agency-create.component';
 import { AgencyEditComponent } from './component/agency-section/agency-edit/agency-edit.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatModule } from './module/shared/mat/mat.module';
 import { ConfirmDialogComponent } from './component/shared/confirm-dialog/confirm-dialog.component';
@@ -55,7 +55,6 @@ import { AgentService } from './services/Agents/agents.service';
 import { ApplicantViewComponent } from './component/applicantSection/applicant-view/applicant-view.component';
 import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
 import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
-
 
 @NgModule({
   declarations: [
@@ -111,9 +110,16 @@ import { ApplicantEditComponent } from './component/applicantSection/applicant-e
     DatePipe,
     ReactiveFormsModule,
     LayoutModule,
-    MatModule
+    MatModule,
+    FormsModule
   ],
-  providers: [HttpClient, DemandService, TradeService, NotificationService, AgentService, DatePipe,
+  providers: [
+    HttpClient,
+    DemandService,
+    TradeService,
+    NotificationService,
+    AgentService,
+    DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

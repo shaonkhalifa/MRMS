@@ -59,7 +59,7 @@ export class AgencyViewComponent {
   }
 
   //filterDate(queryDate: any) {
-  //  //const filterDate = new Date(queryDate); 
+  //  //const filterDate = new Date(queryDate);
   //  this.dataSource.filter = queryDate.toISOString().split('T')[0];
   //  this.medicalCenter;
   //}

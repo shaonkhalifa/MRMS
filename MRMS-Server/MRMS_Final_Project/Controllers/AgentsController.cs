@@ -26,10 +26,10 @@ namespace MRMS_Final_Project.Controllers
         }
 
         //Get Agent by agentId
-        [HttpGet("{AgentId}")]
+        [HttpGet("{agentId}")]
         public ActionResult<Agent> GetAgentByAgentId(int agentId)
         {
-            var agent = _agentRepo.Get(agentId);
+            Agent agent = _agentRepo.Get(agentId);
 
             if (agent is not null)
             {

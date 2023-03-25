@@ -30,7 +30,7 @@ namespace MRMS_Final_Project.Controllers
         {
             return _applicantRepository.GetAll();
         }
-        //GetyId
+        //GetbyId
         [HttpGet("{applicantId}")]
         public ActionResult<Applicant> GetApplicantByApplicantId(int applicantId)
         {

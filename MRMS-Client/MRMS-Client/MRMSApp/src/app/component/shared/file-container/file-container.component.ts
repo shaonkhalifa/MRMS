@@ -13,7 +13,6 @@ import { NotificationService } from '../../../services/Shared/notification.servi
 })
 export class FileContainerComponent {
 
-  @Output() detailForm = new EventEmitter<any>();
   fileTypes: FileTypes[] = [];
 
   constructor(
@@ -23,7 +22,6 @@ export class FileContainerComponent {
 
   @Input() row: any;
 
-  @Output() ItemChanged : EventEmitter<any> = new EventEmitter<any>();
   @Output() ItemRemoved : EventEmitter<any> = new EventEmitter<any>();
   @Output() FileChange : EventEmitter<any> = new EventEmitter<any>();
 

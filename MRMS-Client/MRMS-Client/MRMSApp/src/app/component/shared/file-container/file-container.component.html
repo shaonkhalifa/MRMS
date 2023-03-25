@@ -1,19 +1,28 @@
 <mat-form-field appearance="fill" class="f-w mb-1">
-  <mat-label>Select File Type</mat-label>
+  <mat-label>File Type</mat-label>
   <mat-select [(ngModel)]="row.fileTypeId" name="row.fileTypeId" required>
     <mat-option *ngFor="let f of fileTypes" [value]="f.fileTypeId">{{
       f.name
     }}</mat-option>
   </mat-select>
-  <mat-error *ngIf="!row.fileTypeId">Please select a file type.</mat-error>
+  <mat-error *ngIf="row.fileTypeId === undefined || row.fileTypeId === null">
+    File is required.
+  </mat-error>
 </mat-form-field>
 
 <mat-form-field appearance="fill" class="f-w mb-1">
-  <mat-label>File</mat-label>
+  <mat-label>Upload File</mat-label>
   <button type="button" mat-icon-button matPrefix (click)="f_input.click()">
     <mat-icon>attach_file</mat-icon>
   </button>
-  <input type="text" readonly matInput />
+  <input
+    type="text"
+    readonly
+    matInput
+    [(ngModel)]="row.name"
+    #fileUpload="ngModel"
+    required
+  />
   <input
     type="file"
     multiple
@@ -22,7 +31,11 @@
     (change)="handleFileInputChange($event)"
     required
   />
-  <mat-error>File is required</mat-error>
+  <mat-error
+    *ngIf="fileUpload.invalid && (fileUpload.dirty || fileUpload.touched)"
+  >
+    File is required.
+  </mat-error>
 </mat-form-field>
 
 <mat-form-field appearance="fill" class="f-w mb-1">

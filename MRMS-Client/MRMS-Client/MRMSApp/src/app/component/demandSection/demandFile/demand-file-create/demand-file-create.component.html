@@ -7,7 +7,6 @@
     <div class="f-w" *ngFor="let row of rows; let i = index">
       <app-file-container
         [row]="row"
-        (ItemChanged)="onItemChanged($event, i)"
         (ItemRemoved)="onItemRemoved(i)"
         (FileChange)="onChildFileChange($event, i)"
       >

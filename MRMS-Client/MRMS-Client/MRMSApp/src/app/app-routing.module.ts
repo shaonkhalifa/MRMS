@@ -27,12 +27,27 @@ import { MedicalCenterViewComponent } from './component/MedicalSection/MedicalCe
 import { MedicalRecordViewComponent } from './component/MedicalSection/MedicalRecord/medical-record-view/medical-record-view.component';
 import { FileContainerComponent } from './component/shared/file-container/file-container.component';
 
+import { DemandIssueCreateComponent } from './component/demandSection/demand-issue-create/demand-issue-create.component';
+import { DemandIssueEditComponent } from './component/demandSection/demand-issue-edit/demand-issue-edit.component';
+import { DemandIssueViewComponent } from './component/demandSection/demand-issue-view/demand-issue-view.component';
+
+import { VisaViewComponent } from './component/visaSection/visa-view/visa-view.component';
+import { VisaCreateComponent } from './component/visaSection/visa-create/visa-create.component';
+import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.component';
+
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+
   { path: 'demand', component: DemandViewComponent },
   { path: 'demand-create', component: DemandCreateComponent },
   { path: 'demand-edit/:id', component: DemandEditComponent },
+
+  { path: 'demandIssue', component: DemandIssueViewComponent },
+  { path: 'demandIssue-create', component: DemandIssueCreateComponent },
+  { path: 'demandIssue-edit/:id', component: DemandIssueEditComponent },
+
   { path: 'trade', component: TradeViewComponent },
   { path: 'trade-create', component: TradeCreateComponent },
   { path: 'trade-edit/:id', component: TradeEditComponent },
@@ -56,7 +71,13 @@ const routes: Routes = [
   { path: 'agency-view', component: AgencyViewComponent },
   { path: 'agency-create', component: AgencyCreateComponent },
   { path: 'agency-edit/:id', component: AgencyEditComponent },
-  { path: 'applicant-edit/:id', component: ApplicantEditComponent }
+  { path: 'applicant-edit/:id', component: ApplicantEditComponent },
+
+
+
+  { path: 'visa', component: VisaViewComponent },
+  { path: 'visa-create', component: VisaCreateComponent },
+  { path: 'visa-edit/:id', component: VisaEditComponent }
 
 ];
 

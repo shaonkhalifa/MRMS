@@ -45,6 +45,12 @@ import { FileContainerComponent } from './component/shared/file-container/file-c
 import { DemandFileCreateComponent } from './component/demandSection/demandFile/demand-file-create/demand-file-create.component';
 import { DemandFileEditComponent } from './component/demandSection/demandFile/demand-file-edit/demand-file-edit.component';
 import { DemandFileViewComponent } from './component/demandSection/demandFile/demand-file-view/demand-file-view.component';
+
+import { DemandIssueCreateComponent } from './component/demandSection/demand-issue-create/demand-issue-create.component';
+import { DemandIssueEditComponent } from './component/demandSection/demand-issue-edit/demand-issue-edit.component';
+import { DemandIssueViewComponent } from './component/demandSection/demand-issue-view/demand-issue-view.component';
+
+
 import { CompanyCreateComponent } from './component/company/company-create/company-create.component';
 import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
 import { CompanyViewComponent } from './component/company/company-view/company-view.component';
@@ -56,12 +62,21 @@ import { ApplicantViewComponent } from './component/applicantSection/applicant-v
 import { ApplicantCreateComponent } from './component/applicantSection/applicant-create/applicant-create.component';
 import { ApplicantEditComponent } from './component/applicantSection/applicant-edit/applicant-edit.component';
 
+import { VisaViewComponent } from './component/visaSection/visa-view/visa-view.component';
+import { VisaCreateComponent } from './component/visaSection/visa-create/visa-create.component';
+import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.component';
+
+
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,  
     DemandCreateComponent,
     DemandViewComponent,
     DemandEditComponent,
+    DemandIssueCreateComponent,
+    DemandIssueEditComponent,
+    DemandIssueViewComponent,
     TradeCreateComponent,
     TradeViewComponent,
     TradeEditComponent,
@@ -100,7 +115,10 @@ import { ApplicantEditComponent } from './component/applicantSection/applicant-e
     ApplicantEditComponent,
     AgencyViewComponent,
     AgencyCreateComponent,
-    AgencyEditComponent
+    AgencyEditComponent,
+    VisaViewComponent,
+    VisaCreateComponent,
+    VisaEditComponent
   ],
   imports: [
     BrowserModule,

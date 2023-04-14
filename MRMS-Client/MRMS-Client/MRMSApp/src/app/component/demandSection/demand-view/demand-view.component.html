@@ -30,13 +30,27 @@
         <mat-form-field appearance="fill">
           <mat-label>Filter by date</mat-label>
           <input matInput
-                (dateChange)="filterDate($event.value)"
-                [matDatepicker]="picker">
-          <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                 (dateChange)="filterDate($event.value)"
+                 [matDatepicker]="picker">
+           <mat-hint>MM/DD/YYYY</mat-hint> 
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
+
+      <div class="col-4">
+        <mat-form-field appearance="fill">
+          <mat-label>Filter by date range</mat-label>
+          <mat-date-range-input [formGroup]="dateRange">
+            <input matStartDate formControlName="start" placeholder="Start date">
+            <input matEndDate formControlName="end" placeholder="End date">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-button (click)="filterDateRange(dateRange.value.start, dateRange.value.end)">Apply</button>
+      </div>
+
 
     </div>
 

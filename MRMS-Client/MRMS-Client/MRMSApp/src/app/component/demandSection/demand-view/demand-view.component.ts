@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { throwError } from 'rxjs';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Company } from '../../../models/common/company';
 import { Demand } from '../../../models/demandSection/demand';
 import { CompanyService } from '../../../services/common/company.service';
@@ -19,6 +20,10 @@ import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dial
 export class DemandViewComponent {
   demand: Demand[] = [];
   company: Company[] = [];
+  dateRange = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
   dataSource: MatTableDataSource<Demand> = new MatTableDataSource(this.demand);
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
@@ -69,6 +74,7 @@ export class DemandViewComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+
   filterDate(queryDate: any) {
     //getTimezoneOffset() method to get the difference between the timezone of the computer and UTC time, in minutes
     var offset = queryDate.getTimezoneOffset() * 60 * 1000;
@@ -76,6 +82,16 @@ export class DemandViewComponent {
     var data = utcDate.toISOString().split('T')[0];
     this.dataSource.filter = data;
     this.demand;
+  }
+
+  filterDateRange(startDate: any, endDate: any) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const startUtc = new Date(Date.UTC(start.getFullYear(), start.getMonth(), start.getDate()));
+    const endUtc = new Date(Date.UTC(end.getFullYear(), end.getMonth(), end.getDate()));
+    const startIso = startUtc.toISOString().split('T')[0];
+    const endIso = endUtc.toISOString().split('T')[0];
+    this.dataSource.filter = `${startIso}:${endIso}`;
   }
 
   ngOnInit(): void {

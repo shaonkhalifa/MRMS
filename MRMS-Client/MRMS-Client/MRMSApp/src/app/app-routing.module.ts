@@ -34,6 +34,7 @@ import { DemandIssueViewComponent } from './component/demandSection/demand-issue
 import { VisaViewComponent } from './component/visaSection/visa-view/visa-view.component';
 import { VisaCreateComponent } from './component/visaSection/visa-create/visa-create.component';
 import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.component';
+import { DemandDetailsComponent } from './component/demandSection/demand-details/demand-details.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'demand', component: DemandViewComponent },
   { path: 'demand-create', component: DemandCreateComponent },
   { path: 'demand-edit/:id', component: DemandEditComponent },
+  { path: 'demand-details/:id', component: DemandDetailsComponent },
 
   { path: 'demandIssue', component: DemandIssueViewComponent },
   { path: 'demandIssue-create', component: DemandIssueCreateComponent },

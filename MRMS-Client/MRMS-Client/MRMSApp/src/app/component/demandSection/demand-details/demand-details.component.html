@@ -1,0 +1,40 @@
+<mat-card class="mat-elevation-z3">
+  <mat-card-header>
+    <mat-card-title>Demand Details</mat-card-title>
+    <mat-card-subtitle>Demand Details sub title</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Demand Info">
+        <div class="mat-elevation-z4">
+          <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="property">
+              <mat-cell *matCellDef="let element" class="bold-value-cell">{{ element.property }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="value">
+              <mat-cell *matCellDef="let element" class="value-cell">{{ element.value }}</mat-cell>
+            </ng-container>
+
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Files">
+        <div class="example-large-box mat-elevation-z4">
+          Large content
+        </div>
+      </mat-tab>
+      <mat-tab label="Issues">
+        <div class="example-large-box mat-elevation-z4">
+          Large content
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-flat-button [routerLink]="['/demand']">Back to list</a>
+  </mat-card-actions>
+</mat-card>

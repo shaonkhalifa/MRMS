@@ -67,6 +67,8 @@ import { VisaViewComponent } from './component/visaSection/visa-view/visa-view.c
 import { VisaCreateComponent } from './component/visaSection/visa-create/visa-create.component';
 import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.component';
 import { DemandDetailsComponent } from './component/demandSection/demand-details/demand-details.component';
+import { FileService } from './services/fileSection/file.service';
+import { CompanyService } from './services/common/company.service';
 
 
 
@@ -141,6 +143,8 @@ import { DemandDetailsComponent } from './component/demandSection/demand-details
     TradeService,
     NotificationService,
     AgentService,
+    FileService,
+    CompanyService,
     DatePipe,
     {
       provide: HTTP_INTERCEPTORS,

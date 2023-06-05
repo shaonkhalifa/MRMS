@@ -37,6 +37,7 @@ import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.c
 import { RegisterComponent } from './component/Authentication/register/register.component';
 import { SignInComponent } from './component/Authentication/sign-in/sign-in.component';
 import { AuthGuard } from './component/auth/guards/auth.guard';
+import { DemandDetailsComponent } from './component/demandSection/demand-details/demand-details.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,10 @@ const routes: Routes = [
   { path: 'demandIssue', component: DemandIssueViewComponent, canActivate: [AuthGuard] },
   { path: 'demandIssue-create', component: DemandIssueCreateComponent, canActivate: [AuthGuard] },
   { path: 'demandIssue-edit/:id', component: DemandIssueEditComponent, canActivate: [AuthGuard] },
+  { path: 'demand', component: DemandViewComponent },
+  { path: 'demand-create', component: DemandCreateComponent },
+  { path: 'demand-edit/:id', component: DemandEditComponent },
+  { path: 'demand-details/:id', component: DemandDetailsComponent },
 
   { path: 'trade', component: TradeViewComponent, canActivate: [AuthGuard] },
   { path: 'trade-create', component: TradeCreateComponent, canActivate: [AuthGuard] },

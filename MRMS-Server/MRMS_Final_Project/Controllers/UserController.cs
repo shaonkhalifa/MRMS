@@ -196,10 +196,9 @@ namespace MRMS_Final_Project.Controllers
 
         private int? GetAuthenticatedUserId()
         {
-            // Get the token from the request headers or wherever you store it during authentication
             var token = Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
-            // Validate and extract the user ID from the token
+      
             return ValidateToken(token);
         }
 

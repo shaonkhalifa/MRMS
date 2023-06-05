@@ -23,9 +23,9 @@ export class AuthenticationService {
   signIn(data: any): Observable<Register> {
     return this.http.post<Register>(`${LogUrl}/signIn`, data);
   }
-  signOut(data: any): Observable<any> {
-    return this.http.put<any>(`${LogUrl}/logout`, data);
-}
+  signOut(): Observable<any> {
+    return this.http.post<any>(`${LogUrl}/logout`, null);
+  }
 
   signup(user: any) {
     return this.http.post<any>(`${LogUrl}/Register`, user);

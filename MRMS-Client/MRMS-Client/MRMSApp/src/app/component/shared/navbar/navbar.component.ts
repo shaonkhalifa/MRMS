@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable, shareReplay } from 'rxjs';
 import { AuthenticationService } from '../../../services/Authentication/authentication.service';
 
@@ -19,6 +20,7 @@ export class NavbarComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public authService: AuthenticationService,
+    private router: Router,
 
   ) { }
 
@@ -54,6 +56,7 @@ export class NavbarComponent {
 
   logOut() {
     this.authService.logout();
+    this.router.navigate(['signin']);
   }
   
 }

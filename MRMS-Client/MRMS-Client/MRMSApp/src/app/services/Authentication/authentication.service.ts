@@ -23,10 +23,17 @@ export class AuthenticationService {
   signIn(data: any): Observable<Register> {
     return this.http.post<Register>(`${LogUrl}/signIn`, data);
   }
-  signOut(): Observable<any> {
-    return this.http.post<any>(`${LogUrl}/logout`, null);
-  }
+  //signOut(): Observable<any> {
+  //  return this.http.post<any>(`${LogUrl}/logout`, null);
+  //}
 
+  //signOut(): Observable<any> {
+  //  return this.http.post<any>(`${LogUrl}/logout`, {});
+  //}
+
+  logout() {
+    localStorage.removeItem('token');
+  }
   signup(user: any) {
     return this.http.post<any>(`${LogUrl}/Register`, user);
   }

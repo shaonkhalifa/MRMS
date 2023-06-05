@@ -87,6 +87,8 @@ namespace MRMS_Final_Project.Controllers
 
             return tokenHandler.WriteToken(token);
         }
+
+
         [HttpGet("VT")]
         public int? ValidateToken(string token)
         {

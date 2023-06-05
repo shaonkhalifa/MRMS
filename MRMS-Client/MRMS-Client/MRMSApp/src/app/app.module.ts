@@ -69,6 +69,8 @@ import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.c
 import { DemandDetailsComponent } from './component/demandSection/demand-details/demand-details.component';
 import { FileService } from './services/fileSection/file.service';
 import { CompanyService } from './services/common/company.service';
+import { SignInComponent } from './component/Authentication/sign-in/sign-in.component';
+import { RegisterComponent } from './component/Authentication/register/register.component';
 
 
 
@@ -122,6 +124,9 @@ import { CompanyService } from './services/common/company.service';
     AgencyEditComponent,
     VisaViewComponent,
     VisaCreateComponent,
+    VisaEditComponent,
+    SignInComponent,
+    RegisterComponent
     VisaEditComponent,
     DemandDetailsComponent
   ],

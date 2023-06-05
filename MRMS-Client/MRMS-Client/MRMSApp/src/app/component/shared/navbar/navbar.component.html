@@ -57,6 +57,7 @@
         </div>
         <div>
           <ng-template [ngIf]="authService.isAuthenticated()">
+         
             <button mat-raised-button color="primary" (click)="logOut()">Logout</button>
           </ng-template>
         </div>

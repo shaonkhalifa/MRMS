@@ -27,17 +27,33 @@ export class NavbarComponent {
     return this.authService.isAuthenticated();
   }
 
-  logOut() {
-    this.authService.signOut().subscribe(
-      response => {
-        // Clear any user-specific data or perform additional tasks upon successful logout
-        console.log('User logged out successfully.');
-      },
-      error => {
-        // Handle any errors that occurred during the logout process
-        console.error('An error occurred while logging out:', error);
-      }
-    );
+  //logOut() {
+  //  this.authService.signOut().subscribe(
+  //    response => {
+  //      // Clear any user-specific data or perform additional tasks upon successful logout
+  //      console.log('User logged out successfully.');
+  //    },
+  //    error => {
+  //      // Handle any errors that occurred during the logout process
+  //      console.error('An error occurred while logging out:', error);
+  //    }
+  //  );
 
+  //logOut() {
+  //  this.authService.signOut().subscribe(
+  //    () => {
+  //      // Logout successful
+  //      // Perform any additional actions after logout (e.g., redirect)
+  //    },
+  //    (error) => {
+  //      // Handle error if logout fails
+  //    }
+  //  );
+  //}
+
+
+  logOut() {
+    this.authService.logout();
   }
+  
 }

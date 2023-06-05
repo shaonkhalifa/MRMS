@@ -3,6 +3,9 @@
   justify-content: center;
   margin: 100px 0px;
 }
+.login-toolbar {
+  justify-content: center;
+}
 
 mat-card {
   max-width: 600px;

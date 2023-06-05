@@ -65,6 +65,8 @@ import { ApplicantEditComponent } from './component/applicantSection/applicant-e
 import { VisaViewComponent } from './component/visaSection/visa-view/visa-view.component';
 import { VisaCreateComponent } from './component/visaSection/visa-create/visa-create.component';
 import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.component';
+import { SignInComponent } from './component/Authentication/sign-in/sign-in.component';
+import { RegisterComponent } from './component/Authentication/register/register.component';
 
 
 
@@ -118,7 +120,9 @@ import { VisaEditComponent } from './component/visaSection/visa-edit/visa-edit.c
     AgencyEditComponent,
     VisaViewComponent,
     VisaCreateComponent,
-    VisaEditComponent
+    VisaEditComponent,
+    SignInComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

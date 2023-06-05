@@ -126,7 +126,7 @@ import { RegisterComponent } from './component/Authentication/register/register.
     VisaCreateComponent,
     VisaEditComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
     VisaEditComponent,
     DemandDetailsComponent
   ],
